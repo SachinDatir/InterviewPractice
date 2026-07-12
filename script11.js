@@ -146,3 +146,14 @@ const reverseOnlyLetters = (str) => {
 // let str = "A$b#c!";
 console.log("Original:", str);
 console.log("Result:  ", reverseOnlyLetters(str));
+
+
+
+
+//How can we convert Array it into a number?
+
+let array = [1, 2, 3, 4, 5];
+
+let numbers = Number(array.join(""))
+console.log(numbers, "::::::::::::::");
+console.log(typeof numbers, "::::::::::::::");
