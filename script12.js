@@ -77,3 +77,102 @@ findLongestWord = (str) => {
 };
 
 findLongestWord("Power resides where people believe it resides.............");
+
+findMax = (arr) => {
+  let max = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  console.log(max);
+};
+findMax([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+// remove duplicates
+
+const removeDuplicates = (arr) => {
+  let output = arr.filter((el, index) => {
+    return arr.indexOf(el) === index;
+  });
+  console.log(output);
+};
+
+removeDuplicates([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5]);
+
+// find second max from array
+const findSecondMax = (arr) => {
+  let max = -Infinity;
+  let secondMax = -Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (max < arr[i]) {
+      secondMax = max;
+      max = arr[i];
+    } else if (arr[i] > secondMax && arr[i] < max) {
+      secondMax = arr[i];
+    }
+  }
+
+  console.log(secondMax);
+};
+
+findSecondMax([-1, -2, -3, -4, -5, -6]);
+
+//Reverse each word but keep the sentence order.
+console.log("::::::::::::");
+const revInput = (str) => {
+  let arr = str.split(" ");
+  let rev = "";
+  for (let i = 0; i < arr.length; i++) {
+    rev += arr[i].split(" ").reverse().join(" ");
+  }
+
+  console.log(rev);
+};
+revInput("I love JS");
+//"I evol SJ"
+
+//find Missing number.
+let missingNum = [];
+
+const findMissingNum = (arr) => {
+  let max = arr[arr.length - 1];
+  let set = new Set(arr);
+  let missing = [];
+  console.log(max);
+  for (let i = 1; i < max; i++) {
+    if (!set.has(i)) {
+      missing.push(i);
+    }
+  }
+  return missing;
+};
+console.log(findMissingNum([1, 2, 4, 5, 6, 8]));
+
+//reverseOnlyLetters
+const reverseOnlyLetters = (str) => {
+  let arr = str.split("");
+  let left = 0;
+  let right = arr.length - 1;
+
+  const checkSpecialChar = (char) => /[^a-zA-Z0-9]/.test(char);
+  console.log(checkSpecialChar(arr));
+
+  while (left < right) {
+    if (checkSpecialChar(arr[left])) {
+      left++;
+    } else if (checkSpecialChar(arr[right])) {
+      right--;
+    } else {
+      let temp = arr[left];
+      arr[left] = arr[right];
+      arr[right] = temp;
+      left++;
+      right--;
+    }
+  }
+
+  console.log(arr, ">>>>>>>>>>>");
+};
+
+reverseOnlyLetters("A!v@g%");

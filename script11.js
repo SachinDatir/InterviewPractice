@@ -124,6 +124,7 @@ const reverseOnlyLetters = (str) => {
   let right = arr.length - 1;
 
   checkSpecialChar = (char) => /[^a-zA-Z0-9 ]/.test(char);
+  // /[^a-zA-Z0-9]/
 
   console.log(checkSpecialChar(str), "::::::::");
   while (left < right) {

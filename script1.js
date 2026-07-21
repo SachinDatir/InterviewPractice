@@ -125,3 +125,11 @@ for(char of bb){
   }
 }
 console.log(longestWord,">>>>>>")
+
+let arr = ["rahul","jack","rahul","qualies"]
+
+console.log(arr.sort())
+
+let set = new Set(arr)
+
+console.log(set);
