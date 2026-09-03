@@ -47,7 +47,7 @@ const findLongestStr = (str) => {
   let res = str.split(" ");
   let longestWord = "";
 
-  for (char of res) {
+  for (char of res) {push
     if (char.length > longestWord.length) {
       longestWord = char;
     }
