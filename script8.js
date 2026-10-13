@@ -61,7 +61,7 @@ function twoSumNested(arr, targetSum) {
 
 // console.log(twoSumNested(nums, target));
 
-
+// str which contain same chanr and frequecy but in diff order
 const checkAnagram =(str1,str2)=>{
     if(str1.length!==str2.length){
         return false
