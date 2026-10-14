@@ -254,3 +254,39 @@ const removedup = (arr) => {
 };
 
 removedup([1, 2, 2, 3, 1]);
+
+
+const frequency = (str) => {
+  let newStr = str.toLowerCase();
+  let obj = {};
+
+  for (char of newStr) {
+    if (obj[char]) {
+      obj[char]++;
+    } else {
+      obj[char] = 1;
+    }
+  }
+
+  console.log(obj);
+
+  
+};
+
+frequency("banana")
+
+
+
+const checkSorted =(arr)=>{
+
+  for(let i = 0;i<arr.length-1;i++){
+    if(arr[i]>arr[i+1]){
+      return false
+    }
+  }
+  return true
+
+}
+
+console.log(checkSorted([1, 2, 2, 4, 7]))
+console.log(checkSorted([1, 2, 5,2, 4, 7]))
