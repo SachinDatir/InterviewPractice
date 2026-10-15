@@ -37,36 +37,70 @@ const findDuplicates = (arr) => {
       obj[num] = 1;
     }
   }
-  console.log(obj)
+  console.log(obj);
 
-  let duplicate = []
+  let duplicate = [];
 
-  for(number in obj){
-    if(obj[number]>1){
-     duplicate.push(Number(number));
-
+  for (number in obj) {
+    if (obj[number] > 1) {
+      duplicate.push(Number(number));
     }
   }
 
-  console.log(duplicate)
+  console.log(duplicate);
 };
 
-findDuplicates([1, 2, 3, 2, 4, 1])
+findDuplicates([1, 2, 3, 2, 4, 1]);
 
-
-const findDuplicate2 = (arr)=>{
-  let seen = new Set()
-  let duplicate = new Set()
-  for(const num of arr){
-    if(seen.has(num)){
-      duplicate.add(num)
-    }else{
-      seen.add(num)
+const findDuplicate2 = (arr) => {
+  let seen = new Set();
+  let duplicate = new Set();
+  for (const num of arr) {
+    if (seen.has(num)) {
+      duplicate.add(num);
+    } else {
+      seen.add(num);
     }
   }
 
-  return [...duplicate]
-  
-}
+  return [...duplicate];
+};
 
 console.log(findDuplicate2([1, 2, 3, 2, 4, 1]));
+
+// Two sum
+//arr = [2, 7, 11, 15], target = 9 → [0, 1]
+
+const twoSum = (arr, target) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] == target) {
+        return {
+          additionEle: [arr[i], arr[j]],
+          index: [i, j],
+        };
+      }
+    }
+  }
+};
+console.log(twoSum([2, 7, 11, 15], 9));
+
+//Merge two sorted arrays
+
+//[1, 3, 5] and [2, 4, 6] → [1, 2, 3, 4, 5, 6]
+
+const mergeTwoSortedArray = (arr1, arr2) => {
+  let concated = arr1.concat(arr2);
+  for (let i = 0; i < concated.length; i++) {
+    for (let j = 0; j < concated.length; j++) {
+      if (concated[i] <concated[j]) {
+        let temp = concated[i];
+        concated[i] = concated[j];
+        concated[j] = temp;
+      }
+    }
+  }
+  return concated
+};
+
+console.log(mergeTwoSortedArray([1, 3, 5], [2, 4, 6]));
