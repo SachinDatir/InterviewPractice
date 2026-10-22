@@ -1,6 +1,6 @@
 //Find missing number in array (1 to n)
 let missingNum = [];
-const findMissingNum = (arr) => {
+const findNum = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] != i + 1) {
       //console.log("Missing number is ",i+1);
