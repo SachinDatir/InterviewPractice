@@ -289,4 +289,4 @@ const checkSorted =(arr)=>{
 }
 
 console.log(checkSorted([1, 2, 2, 4, 7]))
-console.log(checkSorted([1, 2, 5,2, 4, 7]))
+console.log(checkSorted([1, 2, 5,2, 4, 7])) 
