@@ -10,16 +10,13 @@ const firstNonRepeating = (str) => {
     }
   }
 
- 
-
   for (const char of newStr) {
-  if (obj[char] === 1) {
-    return char;
+    if (obj[char] === 1) {
+      return char;
+    }
   }
-}
 
-return null;
-
+  return null;
 };
 
 console.log(firstNonRepeating("swiss"));
@@ -27,7 +24,6 @@ console.log(firstNonRepeating("swiss"));
 console.log(firstNonRepeating("aabbc"));
 
 console.log(firstNonRepeating("aabb"));
-
 
 // const   removeDuplicates =(str)=>{
 //     let seen = new Set()
@@ -44,26 +40,23 @@ console.log(firstNonRepeating("aabb"));
 //     return [...seen].join("")
 // }
 
+const removeDuplicates = (str) => {
+  let result = "";
 
-    const removeDuplicates = (str) => {
-    let result = "";
+  for (const char of str) {
+    // TODO: Check whether result already contains char.
+    // TODO: If it doesn't, add char to result.
 
-    for (const char of str) {
-        // TODO: Check whether result already contains char.
-        // TODO: If it doesn't, add char to result.
-
-        if(!result.includes(char)){
-            result+=char
-
-        }
-        
+    if (!result.includes(char)) {
+      result += char;
     }
+  }
 
-    return result;
-    };
+  return result;
+};
 console.log(removeDuplicates("programming"));
-console.log(removeDuplicates("banana"));      // "ban"
-console.log(removeDuplicates("aabbcc"));// Find missing number
+console.log(removeDuplicates("banana")); // "ban"
+console.log(removeDuplicates("aabbcc")); // Find missing number
 
 // const findMissingNum = (arr) => {
 //   let n = arr.length;
@@ -158,14 +151,32 @@ const mergeTwoSortedArray = (arr1, arr2) => {
   let concated = arr1.concat(arr2);
   for (let i = 0; i < concated.length; i++) {
     for (let j = 0; j < concated.length; j++) {
-      if (concated[i] <concated[j]) {
+      if (concated[i] < concated[j]) {
         let temp = concated[i];
         concated[i] = concated[j];
         concated[j] = temp;
       }
     }
   }
-  return concated
+  return concated;
 };
 
 console.log(mergeTwoSortedArray([1, 3, 5], [2, 4, 6]));
+
+const secondLargest = (arr) => {
+  let max = -Infinity;
+  let secondMax = -Infinity;
+
+  for (let num of arr) {
+    if (num > max) {
+      secondMax = max;
+      max = num;
+    } else if (num > secondMax && num != max) {
+      secondMax = num;
+    }
+  }
+
+  return (max, secondMax);
+};
+
+console.log(secondLargest([10, 5, 8, 20, 20, 34]));
