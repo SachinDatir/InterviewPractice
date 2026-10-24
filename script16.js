@@ -136,3 +136,49 @@ const isAnagram = (str1, str2) => {
 };
 console.log(isAnagram("listen", "silent"));
 console.log(isAnagram("hello1", "world"));
+
+
+//Separate letters, numbers, and special characters from a string.
+let str = "1234sachin@!5$";
+const sortBy = (str) => {
+  let arr = str.split("");
+  let numbers = [];
+  let char = [];
+  let special = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (/[0-9]/.test(arr[i])) {
+      numbers.push(Number(arr[i]));
+    } else if (/[a-zA-Z]/.test(arr[i])) {
+      char.push(arr[i]);
+    } else {
+      special.push(arr[i]);
+    }
+  }
+  return { numbers, char, special };
+};
+
+console.log(sortBy(str));
+
+const longestStr = (str) => {
+  let substring = ""
+  let longest = "";
+  for (char of str) {
+    if (substring.includes(char)) {
+      let index = substring.indexOf(char);
+      substring = substring.slice(index + 1);
+    }
+
+    substring += char;
+  }
+
+  if(substring.length>longest.length){
+    longest = substring
+  }
+
+  return {
+    longest:longest,
+    longestLength:longest.length
+  }
+};
+
+console.log(longestStr("pwwkew"));
