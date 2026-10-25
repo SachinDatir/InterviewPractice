@@ -28,11 +28,10 @@ const firstRepeating2 = (str) => {
   }
 };
 
-console.log("firstRepeating2")
+console.log("firstRepeating2");
 console.log(firstRepeating2("abccba"));
 
-
-console.log("firstRepeating3")
+console.log("firstRepeating3");
 const firstRepeating3 = (str) => {
   let seen = new Set();
 
@@ -42,7 +41,26 @@ const firstRepeating3 = (str) => {
     }
     seen.add(str[i]);
   }
-  return null
+  return null;
 };
 
 console.log(firstRepeating3("abccba"));
+
+const findCommon = (arr1, arr2) => {
+  let seen = new Set(arr1);
+  let secondSet = new Set(arr2)
+  let distinctValue = [];
+  for (const num of secondSet) {
+    if (seen.has(num)) {
+      distinctValue.push(num);
+    }
+  }
+  return distinctValue
+
+};
+
+console.log(findCommon([1, 2, 3, 4], [3, 4, 5, 6]));
+console.log(findCommon([1, 1, 2, 3], [1, 1, 3]));
+// [1, 3]
+
+console.log(findCommon([1, 2], [3, 4]));
