@@ -45,3 +45,11 @@ const findMajority = (arr) => {
 console.log(findMajority([3, 3, 4, 2, 3, 3, 3]));
 console.log(findMajority([2, 2, 1, 1, 2, 2]))
 console.log(findMajority([1, 2, 3, 4]))
+
+
+const CountOfChar = (str, char) => {
+  console.log(str.split(char))
+  return str.split(char).length - 1;
+};
+console.log(">>>>>>>>>>>>")
+console.log(CountOfChar("GeeksForGeeks", "G"));
